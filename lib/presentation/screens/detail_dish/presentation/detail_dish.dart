@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/presentation/screens/detail_dish/domain/detail_dish.controller.dart';
 import 'package:FOODSTAR/presentation/screens/detail_dish/domain/indicatior_controller.dart';

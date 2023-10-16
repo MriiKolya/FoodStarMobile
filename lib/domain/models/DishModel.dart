@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names, avoid_print, unnecessary_this
+// ignore_for_file: non_constant_identifier_names, avoid_print, unnecessary_this, unnecessary_getters_setters, file_names
 
 class DishModel {
   int _index = 0;
@@ -13,14 +13,8 @@ class DishModel {
   final String weight;
   final String add_information;
   final bool new_Dish;
-  bool _isFavorite = false;
-
-  bool get isFavorite => _isFavorite;
+  bool isFavorite = false;
   int get index => _index;
-
-  set isFavorite(bool value) {
-    _isFavorite = value;
-  }
 
   set index(int value) {
     _index = value;

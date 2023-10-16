@@ -4,7 +4,6 @@ import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/internal/Utils/Lozalization/Languages/words_Localization.dart';
 import 'package:FOODSTAR/presentation/screens/main/domain/navitation_controller.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 class CartIsEmpty extends StatelessWidget {
   const CartIsEmpty({super.key});

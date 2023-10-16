@@ -1,9 +1,10 @@
+// ignore_for_file: prefer_typing_uninitialized_variables
+
 import 'package:flutter/material.dart';
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/internal/Utils/Lozalization/Languages/words_Localization.dart';
 import 'package:FOODSTAR/components/cart_widget/domain/cart_controller.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 class TitleDish extends StatelessWidget {
   const TitleDish({super.key, this.index});

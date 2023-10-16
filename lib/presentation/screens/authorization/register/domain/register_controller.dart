@@ -27,7 +27,7 @@ class RegisterContoller extends GetxController {
       required String passworduser,
       required String confiredpasswordUser}) async {
     try {
-      AuthenticationRepository.instance..createUser(
+      AuthenticationRepository.instance.createUser(
           email: email,
           name: name,
           passworduser: passworduser,

@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, avoid_print, unrelated_type_equality_checks
 
 import 'dart:async';
 import 'package:FOODSTAR/colors/app_colors.dart';
@@ -11,10 +11,44 @@ import 'package:http/http.dart' as http;
 import 'dart:convert' as convert;
 
 class LocationController extends GetxController {
+  TextEditingController searchPlace = TextEditingController();
+
+  final time_delivery = ''.obs;
+  final isVisiableButton = false.obs;
+  final distance_delivery = ''.obs;
+  final show_addinformation = false.obs;
+  final formWritten = false.obs;
+  final isEnableLocation = false.obs;
+  final isVisiableButtonPay = false.obs;
+  String themeMap = '';
+  Set<Marker> markers = <Marker>{};
+  Set<Polygon> polygons = <Polygon>{};
+  RxSet<Polyline> polylines = <Polyline>{}.obs;
+  RxList<LatLng> polygonsLatLng = <LatLng>[].obs;
+  int polygonIdCounter = 1;
+  int polylineIdCounter = 1;
+  final Completer<GoogleMapController> googleMapsController = Completer();
+  final String key = 'AIzaSyD74Uo_CCXPe3H8MeF4bUAUVSVbAICLj6g';
+  final locationRestraurant = const LatLng(49.2332291, 28.4561609);
+  final location = 'Оберіть Вашу локацію'.obs;
+
   @override
   void onReady() {
     loadSalesReports();
     super.onReady();
+  }
+
+  void isformWritten(bool value) {
+    formWritten.value = true;
+    update();
+    enableButton();
+  }
+
+  void enableButton() {
+    if (formWritten.value == true && isEnableLocation.value == true) {
+      isVisiableButton.value = true;
+      update();
+    }
   }
 
   Future<void> loadSalesReports() async {
@@ -29,28 +63,6 @@ class LocationController extends GetxController {
   void deleteMarkers() {
     markers.clear();
     setMarkers(locationRestraurant, 'Ресторан');
-  }
-
-  TextEditingController searchPlace = TextEditingController();
-
-  final time_delivery = ''.obs;
-  final distance_delivery = ''.obs;
-  final show_addinformation = false.obs;
-  String themeMap = '';
-  Set<Marker> markers = <Marker>{};
-  Set<Polygon> polygons = <Polygon>{};
-  RxSet<Polyline> polylines = <Polyline>{}.obs;
-  RxList<LatLng> polygonsLatLng = <LatLng>[].obs;
-  int polygonIdCounter = 1;
-  int polylineIdCounter = 1;
-  final Completer<GoogleMapController> googleMapsController = Completer();
-  final String key = 'AIzaSyD74Uo_CCXPe3H8MeF4bUAUVSVbAICLj6g';
-  final locationRestraurant = const LatLng(49.2332291, 28.4561609);
-  final location = 'Оберіть Вашу локацію'.obs;
-
-  @override
-  void onInit() {
-    super.onInit();
   }
 
   void setMarkers(LatLng point, String markerid) {
@@ -87,7 +99,9 @@ class LocationController extends GetxController {
 
   void setLocation(String newLocation) {
     location.value = newLocation;
+    isEnableLocation.value = true;
     update();
+    enableButton();
   }
 
   void setPolygon() {

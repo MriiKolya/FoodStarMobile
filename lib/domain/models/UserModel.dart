@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, hash_and_equals
+
 class UserModel {
   String name;
   String email;

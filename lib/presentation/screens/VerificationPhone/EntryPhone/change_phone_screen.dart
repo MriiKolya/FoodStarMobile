@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, avoid_print, prefer_interpolation_to_compose_strings
+// ignore_for_file: deprecated_member_use, avoid_print, prefer_interpolation_to_compose_strings, prefer_const_constructors_in_immutables
 
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/components/my_button.dart';
@@ -17,16 +17,17 @@ class ChangePhoneScreen extends StatelessWidget {
     return GetBuilder<PhoneCodeController>(
         builder: (PhoneCodeController controller) {
       return Scaffold(
-        body: SingleChildScrollView(
-          child: Form(
-            key: controller.phoneKey,
-            child: Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage("assets/images/background.png"),
-                fit: BoxFit.fill,
-              )),
-              child: SafeArea(
+        backgroundColor: AppColors.mainColor,
+        body: Form(
+          key: controller.phoneKey,
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/images/background.png"),
+              fit: BoxFit.cover,
+            )),
+            child: SafeArea(
+              child: SingleChildScrollView(
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

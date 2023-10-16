@@ -1,4 +1,5 @@
 import 'package:FOODSTAR/internal/Utils/menu_repository.dart.dart';
+import 'package:FOODSTAR/presentation/screens/payment/domain/checkout_controller.dart';
 import 'package:FOODSTAR/presentation/screens/payment/domain/location_controller.dart';
 import 'package:FOODSTAR/presentation/screens/authorization/login/domain/login_controller.dart';
 import 'package:FOODSTAR/presentation/screens/authorization/reset_password/domain/change_password_controller.dart';
@@ -51,6 +52,7 @@ class ControllerBinds implements Bindings {
 
     Get.put(CarouselSliverAuthorController());
     Get.put(HomeBannerController());
+    Get.put(CheckoutController());
 
     // Get.put(CartController);
     Get.lazyPut<CartController>(() => CartController());

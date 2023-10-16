@@ -4,6 +4,7 @@ import 'package:FOODSTAR/components/discount_widgets/prices_for_your_favorite.da
 import 'package:FOODSTAR/components/discount_widgets/support_Ukraine.dart';
 import 'package:FOODSTAR/internal/Utils/authentication_repository.dart';
 import 'package:FOODSTAR/presentation/screens/Cart/presentation/cart_screen.dart';
+import 'package:FOODSTAR/presentation/screens/favorite/presentation/favorite_screen.dart';
 import 'package:FOODSTAR/presentation/screens/home/presentation/home_screen.dart';
 import 'package:FOODSTAR/presentation/screens/menu/presentation/menu_screen.dart';
 import 'package:FOODSTAR/presentation/screens/more/presentation/more_scree.dart';
@@ -26,8 +27,8 @@ class NavController extends GetxController {
     const HomeScreen(),
     const CartScreen(),
     const MenuScreen(),
+    const FavoriteScreen(),
     const ProfileUserScreen(),
-    const MoreScreen()
   ];
 
   void setSelectedIndex(int index) {

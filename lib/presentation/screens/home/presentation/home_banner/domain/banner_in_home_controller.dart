@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:FOODSTAR/domain/models/DishModel.dart';
 import 'package:FOODSTAR/internal/Utils/menu_repository.dart.dart';
 import 'package:get/get.dart';

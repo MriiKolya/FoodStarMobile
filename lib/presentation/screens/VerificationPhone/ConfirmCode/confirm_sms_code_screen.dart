@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, avoid_print, prefer_interpolation_to_compose_strings
+// ignore_for_file: deprecated_member_use, avoid_print, prefer_interpolation_to_compose_strings, prefer_const_constructors_in_immutables
 
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/components/my_button.dart';
@@ -21,7 +21,7 @@ class OTPScreen extends StatelessWidget {
           decoration: const BoxDecoration(
               image: DecorationImage(
             image: AssetImage("assets/images/background.png"),
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
           )),
           child: SafeArea(
             child: SingleChildScrollView(

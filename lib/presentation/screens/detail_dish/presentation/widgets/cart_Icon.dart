@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:FOODSTAR/components/cart_widget/cart_widgets.dart';
 import 'package:FOODSTAR/presentation/screens/main/domain/navitation_controller.dart';
 import 'package:animate_do/animate_do.dart';

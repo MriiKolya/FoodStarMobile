@@ -27,13 +27,21 @@ class AuthenticationRepository extends GetxController {
     });
   }
 
+  // @override
+  // Future<void> onInit() async {
+  //   firebaseUser = Rxn<User?>(auth.currentUser);
+  //   firebaseUser.bindStream(auth.userChanges());
+  //   inititalScreen(firebaseUser.value);
+  //   update();
+  //   super.onInit();
+  // }
+
   @override
-  Future<void> onInit() async {
+  onReady() {
     firebaseUser = Rxn<User?>(auth.currentUser);
     firebaseUser.bindStream(auth.userChanges());
     inititalScreen(firebaseUser.value);
     update();
-    super.onInit();
   }
 
   Future<void> resetPassword(String email) async {
@@ -62,7 +70,7 @@ class AuthenticationRepository extends GetxController {
         if (querySnapshot.docs.isNotEmpty) {
           var userData = querySnapshot.docs.first.data();
           currentUser.value = UserModel.fromJson(userData);
-          // print(currentUser);
+          print(currentUser);
         } else {
           print('User not found');
         }

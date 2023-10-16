@@ -20,7 +20,7 @@ class NavigationBarT extends StatelessWidget {
           onTabChange: (index) {
             controller.setSelectedIndex(index);
           },
-          gap: 4,
+          gap: 1,
           backgroundColor: Colors.transparent,
           tabActiveBorder: Border.all(
               strokeAlign: BorderSide.strokeAlignCenter,
@@ -35,8 +35,7 @@ class NavigationBarT extends StatelessWidget {
               iconActiveColor: Colors.white,
             ),
             GButton(
-                leading: const Padding(
-                    padding: EdgeInsets.only(right: 5), child: CartWidget()),
+                leading: const CartWidget(),
                 icon: FlutterFontIcons.basketIcon,
                 textStyle: const TextStyle(color: Colors.white),
                 text: WordLocalizations.Cart.tr),
@@ -47,17 +46,16 @@ class NavigationBarT extends StatelessWidget {
               iconActiveColor: Colors.white,
               textStyle: const TextStyle(color: Colors.white),
             ),
-            GButton(
-              icon: FlutterFontIcons.profileIcon,
-              text: WordLocalizations.Profile.tr,
-              iconSize: 15,
+            const GButton(
+              icon: Icons.favorite_border,
+              text: "Улюблене",
               iconColor: Colors.white,
-              textStyle: const TextStyle(color: Colors.white),
+              textStyle: TextStyle(color: Colors.white),
               iconActiveColor: Colors.white,
             ),
             GButton(
-              icon: Icons.more_horiz,
-              text: WordLocalizations.More.tr,
+              icon: FlutterFontIcons.profileIcon,
+              text: WordLocalizations.Profile.tr,
               iconColor: Colors.white,
               textStyle: const TextStyle(color: Colors.white),
               iconActiveColor: Colors.white,

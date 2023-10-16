@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/components/cart_widget/domain/cart_controller.dart';
 import 'package:FOODSTAR/internal/Utils/Lozalization/Languages/words_Localization.dart';

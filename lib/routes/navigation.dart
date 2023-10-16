@@ -6,7 +6,9 @@ import 'package:FOODSTAR/presentation/screens/authorization/verification_Email/p
 import 'package:FOODSTAR/presentation/screens/detail_dish/presentation/detail_dish.dart';
 import 'package:FOODSTAR/presentation/screens/home/presentation/home_screen.dart';
 import 'package:FOODSTAR/presentation/screens/menu/presentation/menu_screen.dart';
-import 'package:FOODSTAR/presentation/screens/payment/presentation/set_location_with_GoogleMaps.dart';
+import 'package:FOODSTAR/presentation/screens/payment/presentation/Screen/results_pay_scren/presentation/error_pay_screen.dart';
+import 'package:FOODSTAR/presentation/screens/payment/presentation/Screen/results_pay_scren/presentation/success_pay_screen.dart';
+import 'package:FOODSTAR/presentation/screens/payment/presentation/Screen/set_location_with_GoogleMaps.dart';
 import 'package:get/route_manager.dart';
 import '../presentation/screens/authorization/login/presentation/login_screen.dart';
 import '../presentation/screens/main/presentation/main_screen.dart';
@@ -26,6 +28,8 @@ class AppRoutes {
   static const String confirmCode = '/confirmCode';
   static const String checkout = '/checkout';
   static const String locationGoogleMaps = '/locationGoogleMaps';
+  static const String errorScreenPay = '/errorScreenPay';
+  static const String successScrenPay = '/successScren';
 }
 
 class AppPages {
@@ -34,7 +38,9 @@ class AppPages {
         name: AppRoutes.verification,
         page: (() => const VerificationEmailScreen())),
     GetPage(name: AppRoutes.detailDish, page: (() => DetailPageDishScreen())),
-    GetPage(name: AppRoutes.resetPassword, page: (() => ResetPasswordScreen())),
+    GetPage(
+        name: AppRoutes.resetPassword,
+        page: (() => const ResetPasswordScreen())),
     GetPage(name: AppRoutes.login, page: (() => const LoginScreen())),
     GetPage(name: AppRoutes.registerUser, page: (() => const RegisterScreen())),
     GetPage(name: AppRoutes.main, page: (() => const MainScreen())),
@@ -42,6 +48,8 @@ class AppPages {
     GetPage(name: AppRoutes.menu, page: (() => const MenuScreen())),
     GetPage(name: AppRoutes.changePhone, page: (() => ChangePhoneScreen())),
     GetPage(name: AppRoutes.confirmCode, page: (() => OTPScreen())),
+    GetPage(name: AppRoutes.errorScreenPay, page: (() => ErrorScreen())),
+    GetPage(name: AppRoutes.successScrenPay, page: (() => SuccessScren())),
     GetPage(name: AppRoutes.checkout, page: (() => CheckoutScreen())),
     GetPage(
         name: AppRoutes.locationGoogleMaps, page: (() => LocationGoogleMaps())),

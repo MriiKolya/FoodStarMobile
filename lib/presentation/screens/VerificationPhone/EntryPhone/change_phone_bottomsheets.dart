@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:FOODSTAR/colors/app_colors.dart';
 import 'package:FOODSTAR/presentation/screens/VerificationPhone/domain/bottomsheet_phonecode_controller.dart';
 import 'package:flutter/material.dart';
@@ -45,6 +47,7 @@ class BottomSheetsPhone extends StatelessWidget {
                 onChanged: (value) {
                   controller.searchCountry(value);
                 },
+                keyboardType: TextInputType.name,
                 textAlign: TextAlign.left,
                 textAlignVertical: TextAlignVertical.center,
                 style: const TextStyle(color: Colors.white),

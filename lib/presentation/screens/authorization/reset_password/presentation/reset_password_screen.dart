@@ -10,23 +10,25 @@ import 'package:FOODSTAR/presentation/screens/authorization/reset_password/domai
 import 'package:get/get.dart';
 
 class ResetPasswordScreen extends StatelessWidget {
-  ResetPasswordScreen({super.key});
+  const ResetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return GetBuilder<ChangePasswordController>(
         builder: (ChangePasswordController controller) {
       return Scaffold(
-        body: SingleChildScrollView(
-          child: Form(
-            key: controller.emailKey,
-            child: Container(
-              decoration: const BoxDecoration(
-                  image: DecorationImage(
-                image: AssetImage("assets/images/background.png"),
-                fit: BoxFit.fill,
-              )),
-              child: SafeArea(
+        backgroundColor: AppColors.mainColor,
+        body: Form(
+          key: controller.emailKey,
+          child: Container(
+            decoration: const BoxDecoration(
+                image: DecorationImage(
+              image: AssetImage("assets/images/background.png"),
+              fit: BoxFit.cover,
+            )),
+            child: SafeArea(
+              child: SingleChildScrollView(
+                physics: const NeverScrollableScrollPhysics(),
                 child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [

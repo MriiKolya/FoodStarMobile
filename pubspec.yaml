@@ -62,6 +62,8 @@ dependencies:
   smooth_page_indicator: ^1.1.0
   flutter_polyline_points: ^2.0.0
   flutter_credit_card: ^4.0.0+1
+  pay: ^1.1.2
+  swipeable_button_view: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -89,8 +91,10 @@ flutter:
     - assets/images/
     - assets/maptheme/
     - assets/json_image/
+    - assets/json/
     - assets/rive_assets/
     - assets/paymentImage/
+    - assets/lotties_assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

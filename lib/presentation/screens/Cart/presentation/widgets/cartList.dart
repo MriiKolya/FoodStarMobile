@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:countup/countup.dart';
 import 'package:flutter/material.dart';
 import 'package:FOODSTAR/internal/Utils/Lozalization/Languages/words_Localization.dart';

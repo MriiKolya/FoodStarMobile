@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:FOODSTAR/components/my_button.dart';
 import 'package:FOODSTAR/presentation/screens/authorization/verification_Email/domain/verification_Email_controller.dart';
@@ -106,6 +108,3 @@ class VerificationEmailScreen extends StatelessWidget {
   }
 }
 
-void continued() {
-  print("clikc");
-}

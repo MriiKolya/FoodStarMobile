@@ -5,6 +5,7 @@ import 'package:FOODSTAR/domain/models/DishModel.dart';
 import 'package:FOODSTAR/presentation/screens/detail_dish/domain/detail_dish.controller.dart';
 import 'package:FOODSTAR/presentation/screens/detail_dish/domain/indicatior_controller.dart';
 import 'package:FOODSTAR/presentation/screens/detail_dish/presentation/widgets/cart_Icon.dart';
+import 'package:FOODSTAR/presentation/screens/detail_dish/presentation/widgets/favorites_icon.dart';
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -55,9 +56,11 @@ class SLiverAppBarDish extends StatelessWidget {
           ),
         ),
       ),
-      actions: const [
-        // FavotiresIcon(dish: dish,),
-        CartIcon(),
+      actions: [
+        FavotiresIcon(
+          dish: dish,
+        ),
+        const CartIcon(),
       ],
       flexibleSpace: FlexibleSpaceBar(
           background: Column(

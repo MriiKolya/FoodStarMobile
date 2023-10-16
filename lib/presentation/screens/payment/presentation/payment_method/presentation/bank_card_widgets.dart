@@ -1,11 +1,15 @@
 import 'package:FOODSTAR/colors/app_colors.dart';
+import 'package:FOODSTAR/presentation/screens/payment/domain/location_controller.dart';
 import 'package:FOODSTAR/presentation/screens/payment/presentation/payment_method/domain/payment_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_credit_card/flutter_credit_card.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
 
 class BankCardWidgets extends StatelessWidget {
-  const BankCardWidgets({super.key});
+  BankCardWidgets({super.key, required this.locationController});
+
+  final LocationController locationController;
+  final GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +21,13 @@ class BankCardWidgets extends StatelessWidget {
         child: CreditCardForm(
           obscureCvv: true,
           obscureNumber: false,
-          cardNumber: '',
-          cvvCode: '',
-          isHolderNameVisible: false,
-          isCardNumberVisible: true,
-          isExpiryDateVisible: true,
-          cardHolderName: 'cardHolderName',
-          expiryDate: 'expiryDate',
+          expiryDate: controller.expiryDate.value,
+          cardHolderName: controller.cardHolder.value,
+          cardNumber: controller.BankNumber.value,
+          cvvCode: controller.CVV.value,
+          onFormComplete: () {
+            locationController.isformWritten(true);
+          },
           inputConfiguration: InputConfiguration(
             cardHolderTextStyle: const TextStyle(color: Colors.white),
             cvvCodeTextStyle: const TextStyle(color: Colors.white),
@@ -36,7 +40,7 @@ class BankCardWidgets extends StatelessWidget {
               focusedBorder: UnderlineInputBorder(
                   borderSide:
                       BorderSide(color: AppColors.additionalcolor, width: 1)),
-              labelText: 'Number',
+              labelText: 'Номер',
               labelStyle: const TextStyle(color: Colors.white),
               hintStyle: const TextStyle(color: Colors.white),
               hintText: 'XXXX XXXX XXXX XXXX',
@@ -50,7 +54,7 @@ class BankCardWidgets extends StatelessWidget {
                       BorderSide(color: AppColors.additionalcolor, width: 1)),
               labelStyle: const TextStyle(color: Colors.white),
               hintStyle: const TextStyle(color: Colors.white),
-              labelText: 'Expired Date',
+              labelText: 'Термін дії',
               hintText: 'XX/XX',
             ),
             cvvCodeDecoration: InputDecoration(
@@ -66,6 +70,7 @@ class BankCardWidgets extends StatelessWidget {
               hintText: 'XXX',
             ),
             cardHolderDecoration: InputDecoration(
+              labelText: 'Власник карти',
               enabledBorder: UnderlineInputBorder(
                   borderSide:
                       BorderSide(color: Colors.grey.shade300, width: 0.5)),
@@ -74,11 +79,10 @@ class BankCardWidgets extends StatelessWidget {
                       BorderSide(color: AppColors.additionalcolor, width: 1)),
               labelStyle: const TextStyle(color: Colors.white),
               hintStyle: const TextStyle(color: Colors.white),
-              labelText: 'Card Holder',
             ),
           ),
           onCreditCardModelChange: (p0) {},
-          formKey: controller.formKey,
+          formKey: formKey,
         ),
       );
     });

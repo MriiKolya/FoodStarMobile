@@ -22,6 +22,24 @@ class FavotiresIcon extends StatelessWidget {
       return GestureDetector(
         onTap: () {
           dish.isFavorite = !dish.isFavorite;
+          if (dish.isFavorite == true) {
+            Get.snackbar('', '',
+            maxWidth: 300,
+                titleText: Text(
+                  dish.title,
+                  textAlign: TextAlign.center,
+                  style: TextStyle(color: AppColors.additionalcolor),
+                ),
+                backgroundColor: Colors.black54,
+                messageText: const Text(
+                  'Добавленно в улюблене',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                  ),
+                ),
+                colorText: Colors.white);
+          }
           navController.update();
         },
         child: FadeInRight(

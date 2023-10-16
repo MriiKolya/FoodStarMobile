@@ -32,20 +32,25 @@ class FavoriteDishDiscount extends StatelessWidget {
                         style: const TextStyle(
                             fontSize: 18, fontWeight: FontWeight.bold),
                         children: [
-                          TextSpan(
-                              text: WordLocalizations.PriceFor.tr),
+                          TextSpan(text: WordLocalizations.PriceFor.tr),
                           const TextSpan(text: ' '),
                           TextSpan(
-                              text:
-                                  WordLocalizations.YourFavorite.tr,
+                              text: WordLocalizations.YourFavorite.tr,
                               style: const TextStyle(
                                   color: Color.fromRGBO(254, 193, 33, 1))),
                         ],
                       ),
                     ),
-                    Image.asset(
-                      'assets/images/burger.png',
-                      scale: 0.8,
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 10),
+                      child: SizedBox(
+                        height: 100,
+                        width: 100,
+                        child: Image.asset(
+                          'assets/images/first_food.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     )
                   ]),
             ),
