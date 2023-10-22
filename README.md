@@ -1,16 +1,5 @@
-# flutter_application_1
+FoodStar Restaurant
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Foodstar is a restaurant with recipes of exquisite
+dishes from famous people. Dishes from Hollywood stars, theater actors, football players, singers, artists, and other famous people from all over the world.
+Every person who dreamed of trying the food that the stars eat can do it in our restaurant!
