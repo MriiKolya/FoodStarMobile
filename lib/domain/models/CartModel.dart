@@ -15,11 +15,11 @@ class CartModel {
           item.quantity++;
         }
         updateTotalCost(); // Обновляем общую стоимость
-        return; // Завершаем функцию
+        return; 
       }
     }
 
-    // Если товара нет в корзине, добавляем его
+    // Если товара нет в корзине
     items.add(CartItem(dish: dish, quantity: 1));
     updateTotalCost(); // Обновляем общую стоимость
   }
